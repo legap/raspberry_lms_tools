@@ -16,6 +16,9 @@ sudo wget ${download_url}
 package_name=$(echo ${latest_nightly} | sed -r 's/.*\/(.*)/\1/')
 echo "package name: ${package_name}"
 
+# installing required packages
+sudo apt install libio-socket-ssl-perl libnet-ssleay-perl perl-openssl-abi-1.1
+
 # install the downloaded package
 sudo dpkg -i ${package_name}
 
